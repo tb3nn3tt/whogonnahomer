@@ -1,30 +1,30 @@
 {
-  "timestamp": 1743651516346,
+  "timestamp": 1743657167823,
   "data": {
     "Yankees": {
       "R": 0.85,
       "L": 0.85,
       "S": 0.85,
       "raw": {
-        "windSpeed": 11.5,
-        "windDeg": 170,
-        "temp": 44.82,
+        "windSpeed": 10.36,
+        "windDeg": 140,
+        "temp": 45.25,
         "humidity": 82,
-        "windArrow": "⬇️",
-        "emoji": "⬇️ 🌡️44.82°F 💧82% 💨11.5mph"
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️45.25°F 💧82% 💨10.36mph"
       }
     },
     "Orioles": {
-      "R": 0.9102594121949034,
-      "L": 0.8517405878050966,
-      "S": 0.881,
+      "R": 0.85,
+      "L": 0.8770563825980005,
+      "S": 0.8564999999999999,
       "raw": {
         "windSpeed": 6.91,
-        "windDeg": 0,
-        "temp": 52.2,
-        "humidity": 65,
-        "windArrow": "⬆️",
-        "emoji": "⬆️ 🌡️52.2°F 💧65% 💨6.91mph"
+        "windDeg": 150,
+        "temp": 50.9,
+        "humidity": 74,
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️50.9°F 💧74% 💨6.91mph"
       }
     },
     "Red Sox": {
@@ -32,12 +32,12 @@
       "L": 0.85,
       "S": 0.85,
       "raw": {
-        "windSpeed": 10.36,
-        "windDeg": 140,
-        "temp": 36.18,
-        "humidity": 78,
+        "windSpeed": 12.66,
+        "windDeg": 150,
+        "temp": 35.92,
+        "humidity": 83,
         "windArrow": "↘️",
-        "emoji": "↘️ 🌡️36.18°F 💧78% 💨10.36mph"
+        "emoji": "↘️ 🌡️35.92°F 💧83% 💨12.66mph"
       }
     },
     "Blue Jays": {
@@ -47,75 +47,75 @@
       "raw": {
         "windSpeed": 20,
         "windDeg": 70,
-        "temp": 36.55,
-        "humidity": 94,
+        "temp": 38.61,
+        "humidity": 95,
         "windArrow": "➡️",
-        "emoji": "➡️ 🌡️36.55°F 💧94% 💨20mph"
+        "emoji": "➡️ 🌡️38.61°F 💧95% 💨20mph"
       }
     },
     "Rays": {
-      "R": 0.9688825925000001,
-      "L": 1.0322174075,
-      "S": 1.00055,
+      "R": 0.917404698655198,
+      "L": 1.0327953013448021,
+      "S": 0.9751000000000001,
       "raw": {
-        "windSpeed": 12.66,
-        "windDeg": 130,
-        "temp": 78.91,
-        "humidity": 72,
+        "windSpeed": 18.41,
+        "windDeg": 140,
+        "temp": 76.62,
+        "humidity": 79,
         "windArrow": "↘️",
-        "emoji": "↘️ 🌡️78.91°F 💧72% 💨12.66mph"
+        "emoji": "↘️ 🌡️76.62°F 💧79% 💨18.41mph"
       }
     },
     "White Sox": {
-      "R": 0.85,
-      "L": 0.9788082703895977,
-      "S": 0.9010499999999999,
+      "R": 0.8813688181712088,
+      "L": 0.9363311818287909,
+      "S": 0.9088499999999999,
       "raw": {
-        "windSpeed": 17.27,
-        "windDeg": 210,
-        "temp": 63.81,
-        "humidity": 84,
-        "windArrow": "↙️",
-        "emoji": "↙️ 🌡️63.81°F 💧84% 💨17.27mph"
+        "windSpeed": 19.57,
+        "windDeg": 280,
+        "temp": 59.77,
+        "humidity": 70,
+        "windArrow": "⬅️",
+        "emoji": "⬅️ 🌡️59.77°F 💧70% 💨19.57mph"
       }
     },
     "Guardians": {
-      "R": 0.8607531833757779,
-      "L": 1.0102468166242222,
-      "S": 0.9355,
+      "R": 0.8516298827613098,
+      "L": 1.0420701172386901,
+      "S": 0.94685,
       "raw": {
         "windSpeed": 21.85,
-        "windDeg": 160,
-        "temp": 65.5,
-        "humidity": 71,
+        "windDeg": 180,
+        "temp": 67.37,
+        "humidity": 70,
         "windArrow": "⬇️",
-        "emoji": "⬇️ 🌡️65.5°F 💧71% 💨21.85mph"
+        "emoji": "⬇️ 🌡️67.37°F 💧70% 💨21.85mph"
       }
     },
     "Tigers": {
       "R": 0.85,
-      "L": 0.85,
-      "S": 0.85,
+      "L": 0.9860595653915057,
+      "S": 0.86045,
       "raw": {
-        "windSpeed": 10.36,
-        "windDeg": 330,
-        "temp": 49.42,
-        "humidity": 93,
-        "windArrow": "↖️",
-        "emoji": "↖️ 🌡️49.42°F 💧93% 💨10.36mph"
+        "windSpeed": 31.07,
+        "windDeg": 200,
+        "temp": 60.49,
+        "humidity": 96,
+        "windArrow": "⬇️",
+        "emoji": "⬇️ 🌡️60.49°F 💧96% 💨31.07mph"
       }
     },
     "Royals": {
-      "R": 0.8967982730091788,
-      "L": 0.950301726990821,
-      "S": 0.92355,
+      "R": 0.8601342816585793,
+      "L": 0.9057657183414207,
+      "S": 0.88295,
       "raw": {
-        "windSpeed": 10.36,
-        "windDeg": 260,
-        "temp": 57.51,
-        "humidity": 57,
-        "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️57.51°F 💧57% 💨10.36mph"
+        "windSpeed": 5.75,
+        "windDeg": 230,
+        "temp": 52.99,
+        "humidity": 66,
+        "windArrow": "↙️",
+        "emoji": "↙️ 🌡️52.99°F 💧66% 💨5.75mph"
       }
     },
     "Twins": {
@@ -123,25 +123,25 @@
       "L": 0.85,
       "S": 0.85,
       "raw": {
-        "windSpeed": 13.8,
-        "windDeg": 240,
-        "temp": 34.88,
-        "humidity": 94,
-        "windArrow": "↙️",
-        "emoji": "↙️ 🌡️34.88°F 💧94% 💨13.8mph"
+        "windSpeed": 12.66,
+        "windDeg": 250,
+        "temp": 34.47,
+        "humidity": 93,
+        "windArrow": "⬅️",
+        "emoji": "⬅️ 🌡️34.47°F 💧93% 💨12.66mph"
       }
     },
     "Astros": {
-      "R": 0.9265543637315196,
-      "L": 1.0068456362684801,
-      "S": 0.9666999999999999,
+      "R": 0.9369495638135487,
+      "L": 0.9926504361864511,
+      "S": 0.9647999999999999,
       "raw": {
-        "windSpeed": 12.66,
-        "windDeg": 160,
-        "temp": 77.74,
+        "windSpeed": 16.11,
+        "windDeg": 140,
+        "temp": 77.36,
         "humidity": 86,
-        "windArrow": "⬇️",
-        "emoji": "⬇️ 🌡️77.74°F 💧86% 💨12.66mph"
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️77.36°F 💧86% 💨16.11mph"
       }
     },
     "Mariners": {
@@ -150,50 +150,50 @@
       "S": 0.85,
       "raw": {
         "windSpeed": 5.75,
-        "windDeg": 280,
-        "temp": 46.44,
-        "humidity": 83,
-        "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️46.44°F 💧83% 💨5.75mph"
+        "windDeg": 130,
+        "temp": 45.18,
+        "humidity": 86,
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️45.18°F 💧86% 💨5.75mph"
       }
     },
     "Rangers": {
-      "R": 0.9987898913947144,
-      "L": 0.9748101086052853,
-      "S": 0.9867999999999999,
+      "R": 0.9810181525859231,
+      "L": 0.9527818474140768,
+      "S": 0.9669,
       "raw": {
-        "windSpeed": 5.75,
+        "windSpeed": 6.91,
         "windDeg": 80,
-        "temp": 70.56,
-        "humidity": 58,
+        "temp": 69.78,
+        "humidity": 66,
         "windArrow": "➡️",
-        "emoji": "➡️ 🌡️70.56°F 💧58% 💨5.75mph"
+        "emoji": "➡️ 🌡️69.78°F 💧66% 💨6.91mph"
       }
     },
     "Angels": {
-      "R": 0.8538711796814102,
-      "L": 0.9331288203185896,
-      "S": 0.8935,
+      "R": 0.85,
+      "L": 0.9065182955834311,
+      "S": 0.86715,
       "raw": {
-        "windSpeed": 13.8,
-        "windDeg": 250,
-        "temp": 55.9,
-        "humidity": 68,
-        "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️55.9°F 💧68% 💨13.8mph"
+        "windSpeed": 9.22,
+        "windDeg": 210,
+        "temp": 53.83,
+        "humidity": 76,
+        "windArrow": "↙️",
+        "emoji": "↙️ 🌡️53.83°F 💧76% 💨9.22mph"
       }
     },
     "Athletics": {
       "R": 0.85,
-      "L": 0.85,
+      "L": 0.8915145988668111,
       "S": 0.85,
       "raw": {
-        "windSpeed": 6.91,
-        "windDeg": 100,
-        "temp": 44.64,
-        "humidity": 93,
-        "windArrow": "➡️",
-        "emoji": "➡️ 🌡️44.64°F 💧93% 💨6.91mph"
+        "windSpeed": 15.01,
+        "windDeg": 196,
+        "temp": 56.12,
+        "humidity": 97,
+        "windArrow": "⬇️",
+        "emoji": "⬇️ 🌡️56.12°F 💧97% 💨15.01mph"
       }
     },
     "Mets": {
@@ -201,12 +201,12 @@
       "L": 0.85,
       "S": 0.85,
       "raw": {
-        "windSpeed": 11.5,
-        "windDeg": 170,
-        "temp": 44.82,
+        "windSpeed": 10.36,
+        "windDeg": 140,
+        "temp": 45.25,
         "humidity": 82,
-        "windArrow": "⬇️",
-        "emoji": "⬇️ 🌡️44.82°F 💧82% 💨11.5mph"
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️45.25°F 💧82% 💨10.36mph"
       }
     },
     "Nationals": {
@@ -214,181 +214,181 @@
       "L": 0.85,
       "S": 0.85,
       "raw": {
-        "windSpeed": 5.82,
-        "windDeg": 287,
-        "temp": 43.92,
-        "humidity": 71,
+        "windSpeed": 5.64,
+        "windDeg": 282,
+        "temp": 39.04,
+        "humidity": 56,
         "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️43.92°F 💧71% 💨5.82mph"
+        "emoji": "⬅️ 🌡️39.04°F 💧56% 💨5.64mph"
       }
     },
     "Braves": {
-      "R": 0.9405633059668314,
-      "L": 0.9475366940331685,
-      "S": 0.94405,
+      "R": 0.9427346447743385,
+      "L": 0.9455653552256614,
+      "S": 0.9441499999999999,
       "raw": {
-        "windSpeed": 1.01,
-        "windDeg": 248,
-        "temp": 69.21,
-        "humidity": 76,
-        "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️69.21°F 💧76% 💨1.01mph"
+        "windSpeed": 3.44,
+        "windDeg": 120,
+        "temp": 68.83,
+        "humidity": 75,
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️68.83°F 💧75% 💨3.44mph"
       }
     },
     "Phillies": {
       "R": 0.85,
-      "L": 0.8612083363123334,
+      "L": 0.85750190625,
       "S": 0.85,
       "raw": {
         "windSpeed": 5.75,
-        "windDeg": 160,
-        "temp": 46.53,
+        "windDeg": 140,
+        "temp": 47.07,
         "humidity": 70,
-        "windArrow": "⬇️",
-        "emoji": "⬇️ 🌡️46.53°F 💧70% 💨5.75mph"
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️47.07°F 💧70% 💨5.75mph"
       }
     },
     "Marlins": {
-      "R": 0.9773132934235133,
-      "L": 0.9636867065764866,
-      "S": 0.9704999999999999,
+      "R": 0.9687887022178386,
+      "L": 0.9805112977821614,
+      "S": 0.97465,
       "raw": {
-        "windSpeed": 16.11,
-        "windDeg": 100,
-        "temp": 78.1,
-        "humidity": 85,
+        "windSpeed": 13.8,
+        "windDeg": 110,
+        "temp": 78.13,
+        "humidity": 83,
         "windArrow": "➡️",
-        "emoji": "➡️ 🌡️78.1°F 💧85% 💨16.11mph"
+        "emoji": "➡️ 🌡️78.13°F 💧83% 💨13.8mph"
       }
     },
     "Cubs": {
-      "R": 0.85,
-      "L": 0.9741634116050719,
-      "S": 0.9010499999999999,
+      "R": 0.9088499999999999,
+      "L": 0.9088499999999999,
+      "S": 0.9088499999999999,
       "raw": {
-        "windSpeed": 17.27,
-        "windDeg": 210,
-        "temp": 63.81,
-        "humidity": 84,
-        "windArrow": "↙️",
-        "emoji": "↙️ 🌡️63.81°F 💧84% 💨17.27mph"
+        "windSpeed": 19.57,
+        "windDeg": 280,
+        "temp": 59.77,
+        "humidity": 70,
+        "windArrow": "⬅️",
+        "emoji": "⬅️ 🌡️59.77°F 💧70% 💨19.57mph"
       }
     },
     "Cardinals": {
-      "R": 0.8920706477681397,
-      "L": 0.8911293522318604,
-      "S": 0.8916000000000001,
+      "R": 0.8594898365571335,
+      "L": 0.9125101634428666,
+      "S": 0.886,
       "raw": {
-        "windSpeed": 1.01,
-        "windDeg": 306,
-        "temp": 63.52,
+        "windSpeed": 6.91,
+        "windDeg": 240,
+        "temp": 62.4,
         "humidity": 88,
-        "windArrow": "↖️",
-        "emoji": "↖️ 🌡️63.52°F 💧88% 💨1.01mph"
+        "windArrow": "↙️",
+        "emoji": "↙️ 🌡️62.4°F 💧88% 💨6.91mph"
       }
     },
     "Reds": {
-      "R": 0.9013345154904567,
-      "L": 1.090165484509543,
-      "S": 0.9957499999999999,
+      "R": 0.8911567084265466,
+      "L": 0.9240432915734533,
+      "S": 0.9076,
       "raw": {
-        "windSpeed": 19.01,
-        "windDeg": 195,
-        "temp": 75.15,
-        "humidity": 65,
-        "windArrow": "⬇️",
-        "emoji": "⬇️ 🌡️75.15°F 💧65% 💨19.01mph"
+        "windSpeed": 14,
+        "windDeg": 274,
+        "temp": 65.52,
+        "humidity": 85,
+        "windArrow": "⬅️",
+        "emoji": "⬅️ 🌡️65.52°F 💧85% 💨14mph"
       }
     },
     "Pirates": {
-      "R": 0.8635471032367996,
-      "L": 0.9578528967632003,
-      "S": 0.9107,
+      "R": 0.8676014783567692,
+      "L": 1.0096985216432308,
+      "S": 0.93865,
       "raw": {
         "windSpeed": 16.11,
-        "windDeg": 150,
-        "temp": 61.74,
-        "humidity": 74,
-        "windArrow": "↘️",
-        "emoji": "↘️ 🌡️61.74°F 💧74% 💨16.11mph"
+        "windDeg": 180,
+        "temp": 66.13,
+        "humidity": 71,
+        "windArrow": "⬇️",
+        "emoji": "⬇️ 🌡️66.13°F 💧71% 💨16.11mph"
       }
     },
     "Brewers": {
-      "R": 0.857350023931279,
-      "L": 0.897949976068721,
-      "S": 0.8776499999999999,
+      "R": 0.85,
+      "L": 0.925955657637185,
+      "S": 0.8675999999999999,
       "raw": {
-        "windSpeed": 14.97,
-        "windDeg": 270,
-        "temp": 55.13,
-        "humidity": 74,
+        "windSpeed": 21.85,
+        "windDeg": 250,
+        "temp": 52.72,
+        "humidity": 73,
         "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️55.13°F 💧74% 💨14.97mph"
+        "emoji": "⬅️ 🌡️52.72°F 💧73% 💨21.85mph"
       }
     },
     "Dodgers": {
-      "R": 0.86821522125,
-      "L": 0.94108477875,
-      "S": 0.90465,
+      "R": 0.85,
+      "L": 0.921327638819317,
+      "S": 0.8822,
       "raw": {
-        "windSpeed": 16.11,
-        "windDeg": 270,
-        "temp": 55.33,
-        "humidity": 61,
+        "windSpeed": 13.8,
+        "windDeg": 260,
+        "temp": 53.64,
+        "humidity": 68,
         "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️55.33°F 💧61% 💨16.11mph"
+        "emoji": "⬅️ 🌡️53.64°F 💧68% 💨13.8mph"
       }
     },
     "Giants": {
-      "R": 0.8906104055027977,
-      "L": 0.85,
+      "R": 0.85,
+      "L": 0.8588404162330793,
       "S": 0.85,
       "raw": {
-        "windSpeed": 25.99,
-        "windDeg": 315,
-        "temp": 50.38,
+        "windSpeed": 20.71,
+        "windDeg": 280,
+        "temp": 49.64,
         "humidity": 78,
-        "windArrow": "↖️",
-        "emoji": "↖️ 🌡️50.38°F 💧78% 💨25.99mph"
+        "windArrow": "⬅️",
+        "emoji": "⬅️ 🌡️49.64°F 💧78% 💨20.71mph"
       }
     },
     "Padres": {
-      "R": 0.8552419110788346,
-      "L": 0.8853580889211653,
-      "S": 0.8703,
+      "R": 0.85,
+      "L": 0.8684056656149024,
+      "S": 0.85545,
       "raw": {
-        "windSpeed": 5.75,
-        "windDeg": 260,
-        "temp": 54.46,
-        "humidity": 76,
+        "windSpeed": 10.36,
+        "windDeg": 280,
+        "temp": 53.89,
+        "humidity": 82,
         "windArrow": "⬅️",
-        "emoji": "⬅️ 🌡️54.46°F 💧76% 💨5.75mph"
+        "emoji": "⬅️ 🌡️53.89°F 💧82% 💨10.36mph"
       }
     },
     "Rockies": {
-      "R": 0.897335343294698,
-      "L": 0.869264656705302,
-      "S": 0.8833,
+      "R": 0.85,
+      "L": 0.8500777735787055,
+      "S": 0.85,
       "raw": {
-        "windSpeed": 7,
-        "windDeg": 63,
-        "temp": 40.26,
-        "humidity": 34,
-        "windArrow": "↗️",
-        "emoji": "↗️ 🌡️40.26°F 💧34% 💨7mph"
+        "windSpeed": 3,
+        "windDeg": 148,
+        "temp": 37.08,
+        "humidity": 48,
+        "windArrow": "↘️",
+        "emoji": "↘️ 🌡️37.08°F 💧48% 💨3mph"
       }
     },
     "Diamondbacks": {
-      "R": 0.917391486602786,
-      "L": 0.9347085133972141,
-      "S": 0.92605,
+      "R": 0.8961463797300372,
+      "L": 0.9461536202699629,
+      "S": 0.92115,
       "raw": {
-        "windSpeed": 1.99,
-        "windDeg": 225,
-        "temp": 54.81,
-        "humidity": 49,
-        "windArrow": "↙️",
-        "emoji": "↙️ 🌡️54.81°F 💧49% 💨1.99mph"
+        "windSpeed": 5.99,
+        "windDeg": 180,
+        "temp": 54.63,
+        "humidity": 51,
+        "windArrow": "⬇️",
+        "emoji": "⬇️ 🌡️54.63°F 💧51% 💨5.99mph"
       }
     }
   }

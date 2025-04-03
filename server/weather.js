@@ -5,7 +5,7 @@ const path = require('path');
 
 const API_KEY = '2f584ee563f56a67450565518b95b606';
 const CACHE_PATH = path.join(__dirname, 'data', 'weather_cache.json');
-const CACHE_TTL = 1000 * 60 * 15; // 15 minutes
+const CACHE_TTL = 1000 * 60 * 60; // 1 hour
 
 const stadiumLocations = {
   "Yankees": "New York,US",

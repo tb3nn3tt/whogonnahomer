@@ -3,7 +3,7 @@ const axios = require('axios');
 const getMatchupMultipliers = require('./multipliers');
 const { parseISO, format, isAfter } = require('date-fns');
 
-const USE_TEST_DATA = true;
+const USE_TEST_DATA = false;
 
 const testGames = [
   {
