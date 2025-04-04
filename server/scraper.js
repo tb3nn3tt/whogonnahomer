@@ -1,113 +1,133 @@
-// server/scraper.js
 const axios = require('axios');
+const { parseISO, format } = require('date-fns');
 const getMatchupMultipliers = require('./multipliers');
-const { parseISO, format, isAfter } = require('date-fns');
-
-const USE_TEST_DATA = false;
-
-const testGames = [
-  {
-    park: 'Oriole Park at Camden Yards',
-    gameTime: '06:35 PM',
-    pitcher: 'Zach Eflin',
-    pitcherHand: 'R',
-    batters: [
-      { player: 'Jarren Duran', hand: 'L' },
-      { player: 'Rafael Devers', hand: 'L' },
-      { player: 'Alex Bregman', hand: 'R' },
-      { player: 'Triston Casas', hand: 'L' },
-      { player: 'Trevor Story', hand: 'R' },
-      { player: 'Wilyer Abreu', hand: 'L' },
-      { player: 'Kristian Campbell', hand: 'R' },
-      { player: 'Connor Wong', hand: 'R' },
-      { player: 'Ceddanne Rafaela', hand: 'R' }
-    ]
-  },
-  {
-    park: 'Citizens Bank Park',
-    gameTime: '06:45 PM',
-    pitcher: 'Zack Wheeler',
-    pitcherHand: 'R',
-    batters: [
-      { player: 'Brenton Doyle', hand: 'R' },
-      { player: 'Ezequiel Tovar', hand: 'R' },
-      { player: 'Ryan McMahon', hand: 'L' },
-      { player: 'Hunter Goodman', hand: 'R' },
-      { player: 'Kris Bryant', hand: 'R' },
-      { player: 'Michael Toglia', hand: 'S' },
-      { player: 'Nick Martini', hand: 'L' },
-      { player: 'Kyle Farmer', hand: 'R' },
-      { player: 'Mickey Moniak', hand: 'L' }
-    ]
-  },
-  {
-    park: 'Yankee Stadium',
-    gameTime: '07:05 PM',
-    pitcher: 'Carlos Rodón',
-    pitcherHand: 'L',
-    batters: [
-      { player: 'Ketel Marte', hand: 'S' },
-      { player: 'Corbin Carroll', hand: 'L' },
-      { player: 'Lourdes Gurriel Jr.', hand: 'R' },
-      { player: 'Randal Grichuk', hand: 'R' },
-      { player: 'Josh Naylor', hand: 'L' },
-      { player: 'Eugenio Suárez', hand: 'R' },
-      { player: 'Gabriel Moreno', hand: 'R' },
-      { player: 'Jake McCarthy', hand: 'L' },
-      { player: 'Geraldo Perdomo', hand: 'S' }
-    ]
-  }
-];
 
 async function scrapeLineups(forceWeather = false) {
-  if (USE_TEST_DATA) {
-    console.log('🧪 Using test data mode');
-    const testLineups = [];
+  const today = new Date().toISOString().split('T')[0];
+  const scheduleUrl = `https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=${today}&hydrate=probablePitcher`;
 
-    for (const game of testGames) {
-      const { park, gameTime, pitcher, pitcherHand, batters } = game;
-      console.log(`🎯 Game: ${park} — ${pitcher} (${pitcherHand})`);
+  try {
+    console.log(`📅 Fetching MLB schedule for ${today}`);
+    const scheduleRes = await axios.get(scheduleUrl);
+    const games = scheduleRes.data?.dates?.[0]?.games || [];
+    console.log(`✅ Found ${games.length} games\n`);
 
-      for (let i = 0; i < batters.length; i++) {
-        const { player, hand } = batters[i];
-        const batterHand = hand === 'S' ? (pitcherHand === 'R' ? 'L' : 'R') : hand;
+    const results = [];
 
-        console.log(`⚾ Evaluating matchup: ${player} (${batterHand}) vs ${pitcher} (${pitcherHand}) at ${park}`);
-        const {
-          baseHR,
-          batterMultiplier,
-          pitcherMultiplier,
-          parkMultiplier,
-          weatherMultiplier
-        } = await getMatchupMultipliers(player, pitcher, pitcherHand, park, batterHand, forceWeather);
+    for (const game of games) {
+      const gamePk = game.gamePk;
+      const gameTime = parseISO(game.gameDate);
+      const formattedTime = format(gameTime, 'h:mm a');
 
-        testLineups.push({
-          player,
-          team: 'Test Team',
-          opponent: 'Test Opponent',
-          park,
-          gameTime,
-          battingOrder: i + 1,
-          batterHand,
-          pitcher,
-          pitcherHand,
-          baseHR,
-          batterMultiplier,
-          pitcherMultiplier,
-          parkMultiplier,
-          weatherMultiplier
-        });
+      const venue = game.venue?.name || 'Unknown Park';
+      const home = game.teams.home;
+      const away = game.teams.away;
 
-        console.log(`✅ Added ${player} → HR%: ${(baseHR * 100).toFixed(1)}%`);
+      const homePitcher = home?.probablePitcher?.fullName || 'Unknown';
+      const homePitcherHand = home?.probablePitcher?.pitchHand?.code || 'Unknown';
+      const awayPitcher = away?.probablePitcher?.fullName || 'Unknown';
+      const awayPitcherHand = away?.probablePitcher?.pitchHand?.code || 'Unknown';
+
+      if (homePitcher === 'Unknown' || awayPitcher === 'Unknown') {
+        console.warn(`⚠️ Probable pitchers not available for ${away.team.name} @ ${home.team.name}. Skipping game.`);
+        continue;
+      }
+
+      console.log(`📍 Game at ${venue} — ${away.team.name} @ ${home.team.name}`);
+      console.log(`  🧢 Home Pitcher: ${homePitcher} (${homePitcherHand}), Away Pitcher: ${awayPitcher} (${awayPitcherHand})`);
+
+      const boxUrl = `https://statsapi.mlb.com/api/v1/game/${gamePk}/boxscore`;
+      console.log(`📦 Fetching boxscore: ${boxUrl}`);
+      const boxRes = await axios.get(boxUrl);
+      const box = boxRes.data;
+
+      for (const [side, pitcher, pitcherHand, opponent] of [
+        ['home', awayPitcher, awayPitcherHand, away.team.name],
+        ['away', homePitcher, homePitcherHand, home.team.name]
+      ]) {
+        const team = box.teams[side];
+        const teamName = team.team?.name || '';
+        const players = team.players || {};
+        const batters = team.batters || [];
+
+        console.log(`🔄 Processing ${side} batters for ${teamName}`);
+
+        for (let i = 0; i < batters.length; i++) {
+          const id = batters[i];
+          const playerData = players[`ID${id}`] || {};
+          const person = playerData.person || {};
+          const fullName = person.fullName || 'Unknown';
+          const batSide = playerData?.batSide?.code || 'U';
+
+          console.log(`👤 Player ID: ${id}, Name: ${fullName}`);
+          console.log(`   ⬅️ Bat Side: ${batSide}, Pitcher Hand: ${pitcherHand}`);
+
+          if (!fullName || batSide === 'U' || !pitcher || !pitcherHand) {
+            console.warn(`⚠️ Skipping: fullName=${fullName}, batSide=${batSide}, pitcher=${pitcher}, pitcherHand=${pitcherHand}`);
+            continue;
+          }
+
+          const adjustedHand = batSide === 'S'
+            ? pitcherHand === 'R' ? 'L' : 'R'
+            : batSide;
+
+          if (batSide === 'S') {
+            console.log(`🔁 Switch hitter → ${fullName} batting ${adjustedHand} vs ${pitcherHand}`);
+          }
+
+          console.log(`⚾ Matchup: ${fullName} (${adjustedHand}) vs ${pitcher} (${pitcherHand})`);
+
+          const {
+            baseHR,
+            batterMultiplier,
+            pitcherMultiplier,
+            parkMultiplier,
+            weatherMultiplier,
+            weatherEmoji,
+            windRelativeText,
+            windFavorability
+          } = await getMatchupMultipliers(
+            fullName,
+            pitcher,
+            pitcherHand,
+            venue,
+            adjustedHand,
+            forceWeather
+          );
+
+          console.log(`📊 Result → HR%: ${(baseHR * 100).toFixed(1)}%, Multipliers: B×${batterMultiplier.toFixed(2)}, P×${pitcherMultiplier.toFixed(2)}, Park×${parkMultiplier.toFixed(2)}, Wx×${weatherMultiplier.toFixed(2)}\n`);
+
+          results.push({
+            player: fullName,
+            team: teamName,
+            opponent,
+            park: venue,
+            gameTime: formattedTime,
+            battingOrder: i + 1,
+            batterHand: adjustedHand,
+            originalBatterHand: batSide,
+            pitcher,
+            pitcherHand,
+            baseHR,
+            batterMultiplier,
+            pitcherMultiplier,
+            parkMultiplier,
+            weatherMultiplier,
+            weatherEmoji,
+            windRelativeText,
+            windFavorability
+          });
+        }
       }
     }
 
-    console.log(`\n✅ Finished — Returning ${testLineups.length} players (TEST MODE)\n`);
-    return testLineups;
-  }
+    console.log(`✅ All done. Returning ${results.length} matchups\n`);
+    return results;
 
-  console.warn('❌ No real scraper logic implemented yet.');
-  return [];
+  } catch (err) {
+    console.error('❌ Error scraping lineups:', err.message);
+    return [];
+  }
 }
 
 module.exports = scrapeLineups;

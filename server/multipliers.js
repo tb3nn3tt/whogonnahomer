@@ -71,36 +71,41 @@ function normalizeParkName(name) {
   };
   const lower = name.toLowerCase().trim();
   const normalized = aliases[lower] || name.trim();
-  console.log(`🔍 Normalizing park name: raw="${name}", normalized="${normalized}"`);
   return normalized;
 }
 
 async function getMatchupMultipliers(batterName, pitcherName, pitcherHand, park, batterHand, forceUpdate = false) {
-  console.log(`🧮 Start calculating matchup multipliers for ${batterName} vs ${pitcherName}`);
-
   const batterSplit = pitcherHand === 'L' ? batters_vL : batters_vR;
   const batterNeutral = batters;
   const batterVs = findPlayer(batterSplit, batterName);
   const batterOverall = findPlayer(batterNeutral, batterName);
-  console.log(`🔍 Batter stats: vsSplit=${!!batterVs}, overall=${!!batterOverall}`);
 
   const pitcherSplit = batterHand === 'L' ? pitchers_vL : pitchers_vR;
   const pitcherVs = findPlayer(pitcherSplit, pitcherName);
-  console.log(`🔍 Pitcher stats: vsSplit=${!!pitcherVs}`);
 
   const parkName = normalizeParkName(park);
   const teamKey = parkToTeamMap[parkName] || '';
   const parkHR = parkFactors[teamKey]?.[batterHand] || 1.0;
 
-  if (!parkFactors[teamKey]) {
-    console.warn(`⚠️ Park factors not found for team: "${teamKey}"`);
-  }
-
   const weatherMultipliers = await getWeatherMultipliers(forceUpdate);
-  const weatherForPark = weatherMultipliers[teamKey] || { R: 1.0, L: 1.0, S: 1.0, raw: { emoji: '' } };
-  if (!weatherMultipliers[teamKey]) {
-    console.warn(`⚠️ Weather multiplier not found for team: "${teamKey}"`);
-  }
+  const weatherForPark = weatherMultipliers[teamKey] || {
+    R: 1.0,
+    L: 1.0,
+    S: 1.0,
+    raw: {
+      emoji: '',
+      windDirectionText: '',
+      favorability: {
+        R: '',
+        L: '',
+        S: ''
+      }
+    }
+  };
+
+  const weatherMult = weatherForPark[batterHand] || 1.0;
+  const windText = weatherForPark.raw?.windDirectionText || '';
+  const windFav = weatherForPark.raw?.favorability?.[batterHand] || '';
 
   const batterHRvs = batterVs ? safeDivide(batterVs.HR, batterVs.PA, LEAGUE_AVG_HR_RATE) : LEAGUE_AVG_HR_RATE;
   const batterHRall = batterOverall ? safeDivide(batterOverall.HR, batterOverall.PA, LEAGUE_AVG_HR_RATE) : LEAGUE_AVG_HR_RATE;
@@ -108,13 +113,8 @@ async function getMatchupMultipliers(batterName, pitcherName, pitcherHand, park,
 
   const batterMult = (0.75 * batterHRvs + 0.25 * batterHRall) / LEAGUE_AVG_HR_RATE;
   const pitcherMult = (0.75 * pitcherHR + 0.25 * LEAGUE_AVG_HR_RATE) / LEAGUE_AVG_HR_RATE;
-  const weatherMult = weatherForPark[batterHand] || 1.0;
 
   const baseHR = Math.min(batterMult * pitcherMult * parkHR * weatherMult * LEAGUE_AVG_HR_RATE * 4, 1.0);
-
-  console.log(`📊 Matchup: ${batterName} (${batterHand}) vs ${pitcherName} (${pitcherHand})`);
-  console.log(`   Park: ${parkName}, Team: ${teamKey}, Park ×: ${parkHR.toFixed(2)}, Weather ×: ${weatherMult.toFixed(2)}`);
-  console.log(`   Batter ×: ${batterMult.toFixed(2)}, Pitcher ×: ${pitcherMult.toFixed(2)}, HR%: ${(baseHR * 100).toFixed(1)}%\n`);
 
   return {
     baseHR,
@@ -122,7 +122,9 @@ async function getMatchupMultipliers(batterName, pitcherName, pitcherHand, park,
     pitcherMultiplier: pitcherMult,
     parkMultiplier: parkHR,
     weatherMultiplier: weatherMult,
-    weatherEmoji: weatherForPark.raw?.emoji || ''
+    weatherEmoji: weatherForPark.raw?.emoji || '',
+    windRelativeText: windText,
+    windFavorability: windFav
   };
 }
 

@@ -1,0 +1,362 @@
+[
+  {
+    "player": "Corbin Carroll",
+    "batterHand": "L",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Geraldo Perdomo",
+    "batterHand": "S",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Pavin Smith",
+    "batterHand": "L",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Josh Naylor",
+    "batterHand": "L",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Lourdes Gurriel Jr.",
+    "batterHand": "R",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Eugenio Su\u00e1rez",
+    "batterHand": "R",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Alek Thomas",
+    "batterHand": "L",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Garrett Hampson",
+    "batterHand": "R",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Jose Herrera",
+    "batterHand": "S",
+    "pitcher": "Carlos Carrasco",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "D-backs",
+    "opponent": "Yankees"
+  },
+  {
+    "player": "Ben Rice",
+    "batterHand": "L",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Cody Bellinger",
+    "batterHand": "L",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Aaron Judge",
+    "batterHand": "R",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Jazz Chisholm Jr.",
+    "batterHand": "L",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Jasson Dom\u00ednguez",
+    "batterHand": "S",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Anthony Volpe",
+    "batterHand": "R",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Trent Grisham",
+    "batterHand": "L",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "J.C. Escarra",
+    "batterHand": "L",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "Oswaldo Cabrera",
+    "batterHand": "S",
+    "pitcher": "Merrill Kelly",
+    "pitcherHand": "R",
+    "park": "Yankee Stadium",
+    "gameTime": "7:05 PM",
+    "team": "Yankees",
+    "opponent": "D-backs"
+  },
+  {
+    "player": "TJ Friedl",
+    "batterHand": "L",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Matt McLain",
+    "batterHand": "R",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Elly De La Cruz",
+    "batterHand": "S",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Christian Encarnacion-Strand",
+    "batterHand": "R",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Jeimer Candelario",
+    "batterHand": "S",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Blake Dunn",
+    "batterHand": "R",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Spencer Steer",
+    "batterHand": "R",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Santiago Espinal",
+    "batterHand": "R",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Jose Trevino",
+    "batterHand": "R",
+    "pitcher": "Nestor Cortes",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Reds",
+    "opponent": "Brewers"
+  },
+  {
+    "player": "Jackson Chourio",
+    "batterHand": "R",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Christian Yelich",
+    "batterHand": "L",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "William Contreras",
+    "batterHand": "R",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Rhys Hoskins",
+    "batterHand": "R",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Sal Frelick",
+    "batterHand": "L",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Vinny Capra",
+    "batterHand": "R",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Isaac Collins",
+    "batterHand": "S",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Joey Ortiz",
+    "batterHand": "R",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  },
+  {
+    "player": "Brice Turang",
+    "batterHand": "L",
+    "pitcher": "Nick Lodolo",
+    "pitcherHand": "L",
+    "park": "American Family Field",
+    "gameTime": "7:40 PM",
+    "team": "Brewers",
+    "opponent": "Reds"
+  }
+]

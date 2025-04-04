@@ -3,7 +3,7 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-const API_KEY = '2f584ee563f56a67450565518b95b606';
+const API_KEY = 'YOUR_API_KEY_HERE';
 const CACHE_PATH = path.join(__dirname, 'data', 'weather_cache.json');
 const CACHE_TTL = 1000 * 60 * 60; // 1 hour
 
@@ -41,36 +41,36 @@ const stadiumLocations = {
 };
 
 const parkDirections = {
-  Yankees: 22,
-  Orioles: 16,
+  "Yankees": 22,
+  "Orioles": 16,
   "Red Sox": 20,
   "Blue Jays": 25,
-  Rays: 10,
+  "Rays": 10,
   "White Sox": 28,
-  Guardians: 23,
-  Tigers: 0,
-  Royals: 24,
-  Twins: 27,
-  Astros: 29,
-  Mariners: 25,
-  Rangers: 15,
-  Angels: 20,
-  Athletics: 45,
-  Mets: 22,
-  Nationals: 18,
-  Braves: 25,
-  Phillies: 20,
-  Marlins: 15,
-  Cubs: 10,
-  Cardinals: 30,
-  Reds: 19,
-  Pirates: 20,
-  Brewers: 18,
-  Dodgers: 30,
-  Giants: 21,
-  Padres: 27,
-  Rockies: 0,
-  Diamondbacks: 25
+  "Guardians": 23,
+  "Tigers": 0,
+  "Royals": 24,
+  "Twins": 27,
+  "Astros": 29,
+  "Mariners": 25,
+  "Rangers": 15,
+  "Angels": 20,
+  "Athletics": 45,
+  "Mets": 22,
+  "Nationals": 18,
+  "Braves": 25,
+  "Phillies": 20,
+  "Marlins": 15,
+  "Cubs": 10,
+  "Cardinals": 30,
+  "Reds": 19,
+  "Pirates": 20,
+  "Brewers": 18,
+  "Dodgers": 30,
+  "Giants": 21,
+  "Padres": 27,
+  "Rockies": 0,
+  "Diamondbacks": 25
 };
 
 function windToMultiplier(speed, deg, parkDir, hand) {
@@ -93,6 +93,22 @@ function combine(windMult, tempMult) {
 function getArrowEmoji(deg) {
   const arrows = ['⬆️','↗️','➡️','↘️','⬇️','↙️','⬅️','↖️'];
   return arrows[Math.round(((deg % 360) / 45)) % 8];
+}
+
+function getWindDirectionText(deg, parkDir) {
+  const angle = (deg - parkDir + 360) % 360;
+  if (angle < 45 || angle > 315) return 'Blowing out to CF';
+  if (angle < 135) return 'Blowing out to RF';
+  if (angle < 225) return 'Blowing in from CF';
+  return 'Blowing out to LF';
+}
+
+function getFavorabilityText(batterHand, deg, parkDir) {
+  const angle = (deg - parkDir + (batterHand === 'L' ? 180 : 0) + 360) % 360;
+  const cos = Math.cos((angle * Math.PI) / 180);
+  if (cos > 0.25) return `Favorable for ${batterHand}HH`;
+  if (cos < -0.25) return `Unfavorable for ${batterHand}HH`;
+  return 'Neutral';
 }
 
 function loadCache() {
@@ -131,7 +147,6 @@ async function getWeatherMultipliers(force = false) {
       const windDeg = weather.wind.deg;
       const temp = weather.main.temp;
       const humidity = weather.main.humidity;
-
       const parkDir = parkDirections[team] || 0;
       const tempMult = tempHumidityToMultiplier(temp, humidity);
 
@@ -143,6 +158,8 @@ async function getWeatherMultipliers(force = false) {
       const finalL = combine(windL, tempMult);
       const finalS = combine(windS, tempMult);
 
+      const arrow = getArrowEmoji(windDeg);
+
       data[team] = {
         R: finalR,
         L: finalL,
@@ -152,15 +169,21 @@ async function getWeatherMultipliers(force = false) {
           windDeg,
           temp,
           humidity,
-          windArrow: getArrowEmoji(windDeg),
-          emoji: `${getArrowEmoji(windDeg)} 🌡️${temp}°F 💧${humidity}% 💨${windSpeed}mph`
+          windArrow: arrow,
+          emoji: `${arrow} 🌡️${temp.toFixed(1)}°F 💧${humidity}% 💨${windSpeed.toFixed(1)}mph`,
+          windDirectionText: getWindDirectionText(windDeg, parkDir),
+          favorability: {
+            R: getFavorabilityText('R', windDeg, parkDir),
+            L: getFavorabilityText('L', windDeg, parkDir),
+            S: 'Neutral'
+          }
         }
       };
 
       console.log(`🌤️ ${team}: Wind ${windSpeed}mph @ ${windDeg}°, Temp ${temp}°F, Humidity ${humidity}%`);
     } catch (err) {
       console.warn(`⚠️ Weather fetch failed for ${team}: ${err.message}`);
-      data[team] = { R: 1, L: 1, S: 1, raw: { windArrow: '❓', emoji: '❓' } };
+      data[team] = { R: 1, L: 1, S: 1, raw: { windArrow: '❓', emoji: '❓', windDirectionText: 'Unknown', favorability: { R: '', L: '', S: '' } } };
     }
   }
 
